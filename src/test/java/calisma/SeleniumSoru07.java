@@ -28,7 +28,6 @@ public class SeleniumSoru07 {
         driver.close();
     }
 
-
     @Test
     public void test01(){
 
@@ -55,17 +54,7 @@ public class SeleniumSoru07 {
         driver.findElement(By.xpath("//*[@id='lteq30']")).sendKeys("20"+ Keys.ENTER);
 
         //    and then verify Submitted Values is displayed open page
-        Assert.assertEquals("Degerler ayni degil","20", driver.findElement(By.id("_valuesubmitbutton")).getText());
-
-
-
-
-
-
-
-
+        Assert.assertEquals("Submitted Values", driver.findElement(By.xpath("//p[text()='Submitted Values']")).getText());
 
     }
-
-
 }
