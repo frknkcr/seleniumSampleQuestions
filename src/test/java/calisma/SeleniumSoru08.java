@@ -1,14 +1,11 @@
 package calisma;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-import javax.swing.*;
 import java.time.Duration;
 
 public class SeleniumSoru08 {
@@ -27,9 +24,6 @@ public class SeleniumSoru08 {
 
         //    go to url : https://www.techlistic.com/p/selenium-practice-form.html
         driver.get("https://www.techlistic.com/p/selenium-practice-form.html");
-
-        System.out.println("maximize size : "+driver.manage().window().getSize());
-        System.out.println("maximize position : "+driver.manage().window().getPosition());
 
         //    fill the firstname
         driver.findElement(By.xpath("//*[@name='firstname']")).sendKeys("John");
@@ -57,7 +51,6 @@ public class SeleniumSoru08 {
 
         //    choose your tool -> Selenium Webdriver
         driver.findElement(By.id("tool-2")).click();
-
 
         //    choose your continent -> Antartica
         Select continentSelect = new Select(driver.findElement(By.xpath("//select[@id='continents']")));

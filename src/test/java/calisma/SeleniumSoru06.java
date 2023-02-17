@@ -1,13 +1,11 @@
 package calisma;
 
+import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
@@ -23,8 +21,14 @@ public class SeleniumSoru06 {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
+    @After
+    public void teardown(){
+        driver.close();
+    }
+
     @Test
     public void test01(){
+
         //a. Verilen web sayfasına gidin.
         //https://facebook.com
         driver.get("https://facebook.com");

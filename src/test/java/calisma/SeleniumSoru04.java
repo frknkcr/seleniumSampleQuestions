@@ -24,6 +24,7 @@ public class SeleniumSoru04 {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
         //2) https://www.youtube.com adresine gidin
         driver.get("https://youtube.com");
     }
