@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class SeleniumSoru07 {
+public class SeleniumOdev03 {
 
     WebDriver driver;
 

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
-public class SeleniumSoru08 {
+public class SeleniumOdev01 {
 
     WebDriver driver;
 
