@@ -1,5 +1,6 @@
 package calisma;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
@@ -17,6 +18,11 @@ public class SeleniumSoru08 {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+    }
+
+    @After
+    public void teardown(){
+        driver.close();
     }
 
     @Test
@@ -57,7 +63,7 @@ public class SeleniumSoru08 {
         continentSelect.selectByVisibleText("Antartica");
 
         //    choose your command  -> Browser Commands
-        Select seleniumCommandsSelect = new Select(driver.findElement(By.xpath("//*[@id=\"selenium_commands\"]")));
+        Select seleniumCommandsSelect = new Select(driver.findElement(By.xpath("//*[@id='selenium_commands']")));
         seleniumCommandsSelect.selectByVisibleText("Browser Commands");
 
         //    click submit button
