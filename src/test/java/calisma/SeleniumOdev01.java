@@ -5,17 +5,22 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.io.File;
 import java.time.Duration;
 
 public class SeleniumOdev01 {
 
     WebDriver driver;
+    ChromeOptions options;
 
     @Before
     public void setup(){
-        driver = new ChromeDriver();
+        options = new ChromeOptions();
+        options.addExtensions(new File("uBlock.crx"));
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
@@ -26,7 +31,7 @@ public class SeleniumOdev01 {
     }
 
     @Test
-    public void test01(){
+    public void test01() throws InterruptedException {
 
         //    go to url : https://www.techlistic.com/p/selenium-practice-form.html
         driver.get("https://www.techlistic.com/p/selenium-practice-form.html");
@@ -37,12 +42,14 @@ public class SeleniumOdev01 {
         //    fill the lastname
         driver.findElement(By.xpath("//*[@name='lastname']")).sendKeys("Doe");
 
-        //    check the gender
-        driver.findElement(By.xpath("//*[@id='sex-0']")).click();
-
         // Sayfayi bir ekran boyutu asagi kaydirmak icin asagidaki kodlar kullanilir
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, window.innerHeight)");
+
+        //    check the gender
+        driver.findElement(By.xpath("//*[@id='sex-0']")).click();
+
+
 
         //    check the experience
         driver.findElement(By.xpath("//*[@id='exp-1']")).click();
@@ -59,12 +66,14 @@ public class SeleniumOdev01 {
         driver.findElement(By.id("tool-2")).click();
 
         //    choose your continent -> Antartica
-        Select continentSelect = new Select(driver.findElement(By.xpath("//select[@id='continents']")));
-        continentSelect.selectByVisibleText("Antartica");
+        driver.findElement(By.xpath("//select[@id='continents']")).sendKeys("Europe"+Keys.ENTER);
+        //driver.findElement(By.xpath("//option[text()=\"Europe\"]")).click();
 
         //    choose your command  -> Browser Commands
         Select seleniumCommandsSelect = new Select(driver.findElement(By.xpath("//*[@id='selenium_commands']")));
         seleniumCommandsSelect.selectByVisibleText("Browser Commands");
+
+        driver.findElement(By.id("cookieChoiceDismiss")).click();
 
         //    click submit button
         driver.findElement(By.xpath("//*[@id='submit']")).click();

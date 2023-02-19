@@ -3,16 +3,15 @@ package calisma;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
 import java.time.Duration;
 
-public class youtubeDeneme {
+public class AmazonDeneme {
 
     WebDriver driver;
     ChromeOptions options;
@@ -27,11 +26,13 @@ public class youtubeDeneme {
     }
 
     @Test
-    public void youtubeBot() throws InterruptedException {
-        driver.get("https://www.youtube.com");
-        WebElement element = driver.findElement(By.name("search_query"));
-        element.click();
-        element.sendKeys("mabel"+ Keys.ENTER);
-        driver.findElement(By.xpath("//a[@id='video-title']")).click();
+    public void test01(){
+        driver.get("https://www.amazon.com");
+        // Sayfayi bir ekran boyutu asagi kaydirmak icin asagidaki kodlar kullanilir
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 2000)");
+        driver.findElement(By.xpath("//img[@alt='Shop Laptops & Tablets']")).click();
+
+
     }
 }
