@@ -40,7 +40,7 @@ public class youtubeDeneme {
         element.sendKeys("mabel"+ Keys.ENTER);
         driver.findElement(By.xpath("//a[@id='video-title']")).click();
         driver.findElement(By.xpath("//button[@class='ytp-mute-button ytp-button']")).click();
-        Thread.sleep(Duration.ofMinutes(2));
+        Thread.sleep(Duration.ofSeconds(10));
         driver.navigate().back();
     }
 }
