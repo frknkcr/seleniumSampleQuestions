@@ -1,5 +1,6 @@
 package calisma;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -26,12 +27,20 @@ public class youtubeDeneme {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
+    @After
+    public void teardown(){
+        driver.close();
+    }
+
     @Test
     public void youtubeBot() throws InterruptedException {
         driver.get("https://www.youtube.com");
-        WebElement element = driver.findElement(By.name("search_query"));
+        WebElement element = driver.findElement(By.xpath("//*[@name='search_query']"));
         element.click();
         element.sendKeys("mabel"+ Keys.ENTER);
         driver.findElement(By.xpath("//a[@id='video-title']")).click();
+        driver.findElement(By.xpath("//button[@class='ytp-mute-button ytp-button']")).click();
+        Thread.sleep(Duration.ofMinutes(2));
+        driver.navigate().back();
     }
 }
