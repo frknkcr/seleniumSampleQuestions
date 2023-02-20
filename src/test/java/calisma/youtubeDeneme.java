@@ -2,6 +2,7 @@ package calisma;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -39,8 +40,8 @@ public class youtubeDeneme {
         element.click();
         element.sendKeys("mabel"+ Keys.ENTER);
         driver.findElement(By.xpath("//a[@id='video-title']")).click();
-        driver.findElement(By.xpath("//button[@class='ytp-mute-button ytp-button']")).click();
-        Thread.sleep(Duration.ofSeconds(10));
+        //driver.findElement(By.xpath("//button[@class='ytp-mute-button ytp-button']")).click();
+        Thread.sleep(10000);
         driver.navigate().back();
     }
 }
