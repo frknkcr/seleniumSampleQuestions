@@ -20,6 +20,8 @@ public class SeleniumOdev01 extends TestBase {
         //    go to url : https://www.techlistic.com/p/selenium-practice-form.html
         driver.get("https://www.techlistic.com/p/selenium-practice-form.html");
 
+        driver.findElement(By.id("cookieChoiceDismiss")).click();
+
         //    fill the firstname
         driver.findElement(By.xpath("//*[@name='firstname']")).sendKeys("John");
 
@@ -27,8 +29,8 @@ public class SeleniumOdev01 extends TestBase {
         driver.findElement(By.xpath("//*[@name='lastname']")).sendKeys("Doe");
 
         // Sayfayi bir ekran boyutu asagi kaydirmak icin asagidaki kodlar kullanilir
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, window.innerHeight)");
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
+        //js.executeScript("window.scrollBy(0, window.innerHeight)");
 
         //    check the gender
         driver.findElement(By.xpath("//*[@id='sex-0']")).click();
@@ -54,8 +56,6 @@ public class SeleniumOdev01 extends TestBase {
         //    choose your command  -> Browser Commands
         Select seleniumCommandsSelect = new Select(driver.findElement(By.xpath("//*[@id='selenium_commands']")));
         seleniumCommandsSelect.selectByVisibleText("Browser Commands");
-
-        driver.findElement(By.id("cookieChoiceDismiss")).click();
 
         //    click submit button
         driver.findElement(By.xpath("//*[@id='submit']")).click();
