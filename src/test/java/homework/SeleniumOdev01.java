@@ -1,4 +1,4 @@
-package calisma;
+package homework;
 
 import org.junit.After;
 import org.junit.Before;
@@ -7,28 +7,12 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
+import utilities.TestBase;
 
 import java.io.File;
 import java.time.Duration;
 
-public class SeleniumOdev01 {
-
-    WebDriver driver;
-    ChromeOptions options;
-
-    @Before
-    public void setup(){
-        options = new ChromeOptions();
-        options.addExtensions(new File("uBlock.crx"));
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-    }
-
-    @After
-    public void teardown(){
-        driver.close();
-    }
+public class SeleniumOdev01 extends TestBase {
 
     @Test
     public void test01() throws InterruptedException {
@@ -48,8 +32,6 @@ public class SeleniumOdev01 {
 
         //    check the gender
         driver.findElement(By.xpath("//*[@id='sex-0']")).click();
-
-
 
         //    check the experience
         driver.findElement(By.xpath("//*[@id='exp-1']")).click();

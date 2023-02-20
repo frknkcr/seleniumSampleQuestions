@@ -1,4 +1,4 @@
-package calisma;
+package deneme;
 
 import org.junit.After;
 import org.junit.Before;

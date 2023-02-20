@@ -1,4 +1,4 @@
-package calisma;
+package study;
 
 import org.junit.*;
 import org.openqa.selenium.By;

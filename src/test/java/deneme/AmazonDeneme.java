@@ -1,4 +1,4 @@
-package calisma;
+package deneme;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -29,10 +29,9 @@ public class AmazonDeneme {
     public void test01(){
         driver.get("https://www.amazon.com");
         // Sayfayi bir ekran boyutu asagi kaydirmak icin asagidaki kodlar kullanilir
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, 2000)");
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
+        //js.executeScript("window.scrollBy(0, 2000)");
         driver.findElement(By.xpath("//img[@alt='Shop Laptops & Tablets']")).click();
-
 
     }
 }

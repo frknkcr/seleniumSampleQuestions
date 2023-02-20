@@ -1,4 +1,4 @@
-package calisma;
+package deneme;
 
 import org.junit.Test;
 import org.openqa.selenium.By;

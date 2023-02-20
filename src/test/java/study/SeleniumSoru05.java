@@ -1,4 +1,4 @@
-package calisma;
+package study;
 
 import org.junit.After;
 import org.junit.Assert;
