@@ -25,6 +25,14 @@ public class TestBase {
 
     @After
     public void teardown(){
-        driver.close();
+        //driver.close();
+    }
+
+    public void sleep(int saniye){
+        try {
+            Thread.sleep(Duration.ofSeconds(saniye));
+        } catch (InterruptedException e) {
+
+        }
     }
 }

@@ -1,37 +1,14 @@
 package deneme;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import utilities.TestBase;
 
-import java.io.File;
-import java.time.Duration;
 
-public class youtubeDeneme {
 
-    WebDriver driver;
-    ChromeOptions options;
-
-    @Before
-    public void setup(){
-        options = new ChromeOptions();
-        options.addExtensions(new File("uBlock.crx"));
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-    }
-
-    @After
-    public void teardown(){
-        driver.close();
-    }
+public class youtubeDeneme extends TestBase {
 
     @Test
     public void youtubeBot() throws InterruptedException {

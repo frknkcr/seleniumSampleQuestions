@@ -2,19 +2,12 @@ package deneme;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import utilities.TestBase;
 
-import java.time.Duration;
-
-public class trendyolDeneme {
+public class trendyolDeneme extends TestBase {
 
     @Test
     public void test01() throws InterruptedException {
-
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
         driver.get("https://www.trendyol.com");
 
@@ -26,15 +19,13 @@ public class trendyolDeneme {
 
         driver.findElement(By.className("add-to-basket-button-text")).click();
 
-        Thread.sleep(1000);
+        sleep(1);
 
         driver.findElement(By.xpath("//p[text()='Sepetim']")).click();
 
         driver.findElement(By.className("i-trash")).click();
 
         driver.findElement(By.xpath("//*[text()='Sil']")).click();
-
-        driver.close();
 
     }
 }
