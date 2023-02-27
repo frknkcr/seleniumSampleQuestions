@@ -16,16 +16,16 @@ public class TestBase {
 
     @Before
     public void setup(){
-        options = new ChromeOptions();
-        options.addExtensions(new File("uBlock.crx"));
-        driver = new ChromeDriver(options);
+        //options = new ChromeOptions();
+        //options.addExtensions(new File("uBlock.crx"));
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
     @After
     public void teardown(){
-        //driver.close();
+        driver.quit();
     }
 
     public void sleep(int saniye){
